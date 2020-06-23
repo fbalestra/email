@@ -1,0 +1,129 @@
+@import "confetti.css";
+@import "fireworks.css";
+
+html {
+
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F8F8F5;
+}
+
+body {
+    width: 600px;
+    height: 900px;
+    margin: 0 auto;
+    background-color: #EDF5F3;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
+
+    padding:20px 20px 20px 20px;
+    overflow: hidden;
+}
+
+.address{
+    font-size: 30px;
+    color: #556EC6;
+    margin: 20px 0 10px 0;
+    text-align: left;
+}
+
+.prompt{
+    font-size: 25px;
+    color: #556EC6;
+    margin: 0;
+    text-align: left;
+}
+
+.directions{
+    font-size: 15px;
+    color: #556EC6;
+    opacity: 0;
+    margin: 0 0 10px 0;
+    text-align: center;
+    animation: fadeIn 1s 3s forwards;
+}
+
+/*//Animations//*/
+
+.slogan{
+    font-size: 50px;
+    font-weight: bold;
+    color: #AF3096;
+    margin: 40px;
+    text-align: center;
+    /*animation: slideInLeft 2s 1s both ease-out,
+                shake 1s 3s ease forward;
+
+     */
+
+    animation-name: slideInLeft, shake, wheelHueColor;
+    animation-delay: 1s, 3s, 1s;
+    animation-duration: 2s, 1s, 20s;
+    animation-fill-mode: both, forwards, forwards;
+    animation-timing-function: ease-out, ease, linear;
+    animation-iteration-count: 1, 1, infinite;
+    }
+
+.envelope{
+    opacity: 0;
+    animation: flipInX 3s 3s ease 1 forwards
+}
+/*//Key Frames//*/
+
+@keyframes slideInLeft {
+    from{ transform: translateX(200%)}
+    to{ transform: translateX(0%)}
+}
+
+@keyframes shake {
+
+  10%, 90% {
+    transform: translateY(-10px)
+  }
+
+  20%, 80% {
+    transform: translateY(10px)
+  }
+
+  30%, 50%, 70% {
+    transform: translateY(-10px)
+  }
+
+  40%, 60% {
+    transform: translateY(10px)
+  }
+}
+
+@keyframes wheelHueColor {
+    from, to { color: rgb(236,100,75); }
+    10%      { color: rgb(219,10,91); }
+    20%      { color: rgb(174,168,211); }
+    30%      { color: rgb(89,171,227); }
+    40%      { color: rgb(37,116,169); }
+    50%      { color: rgb(3,201,169); }
+    60%      { color: rgb(22,160,133); }
+    70%      { color: rgb(233,212,96); }
+    80%      { color: rgb(243,156,18); }
+    90%      { color: rgb(236,240,241); }
+}
+
+@keyframes flipInX {
+   0% {
+      transform: perspective(400px) rotateX(90deg);
+      opacity: 0;
+   }
+   40% {
+      transform: perspective(400px) rotateX(-10deg);
+   }
+   70% {
+      transform: perspective(400px) rotateX(10deg);
+   }
+   100% {
+      transform: perspective(400px) rotateX(0deg);
+      opacity: 1;
+   }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
